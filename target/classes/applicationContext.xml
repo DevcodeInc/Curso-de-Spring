@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config/>
+	<context:component-scan base-package="com.pe.devcode"></context:component-scan>
+	
+<!-- 	setter injection -->
+	<bean id="pan" class="com.pe.devcode.modelo.Pan"> 
+		<property name="marca" value="Bimbo"/>
+		<property name="tipoPan" value="pan de Hamburguesa"/>
+		<property name="fresco" value="true"/>
+		<property name="panesUsados" value="1"/>
+	</bean>
+	
+	<bean id="panPerro" class="com.pe.devcode.modelo.Pan"> 
+		<property name="marca" value="Bimbo"/>
+		<property name="tipoPan" value="pan de perro"/>
+		<property name="fresco" value="true"/>
+		<property name="panesUsados" value="1"/>
+	</bean>	
+	
+	<bean id="panSandwich" class="com.pe.devcode.modelo.Pan"> 
+		<property name="marca" value="Bimbo"/>
+		<property name="tipoPan" value="pan de sandwich"/>
+		<property name="fresco" value="true"/>
+		<property name="panesUsados" value="2"/>
+	</bean>		
+	
+	
+<!-- 	Constructor injection -->
+<!-- 	<bean id="pan" class="com.pe.devcode.modelo.Pan">  -->
+<!-- 		<constructor-arg type="java.lang.String" value="pan de Hamburguesa1"/> -->
+<!-- 		<constructor-arg type="java.lang.String" value="Bimbo"/> -->
+<!-- 		<constructor-arg type="java.lang.Boolean" value="true"/> -->
+<!-- 		<constructor-arg type="java.lang.Integer" value="1"/> -->
+<!-- 	</bean>	 -->
+	
+<!-- 	<bean id="panPerro" class="com.pe.devcode.modelo.Pan">  -->
+<!-- 		<constructor-arg type="java.lang.String" value="pan de perro"/> -->
+<!-- 		<constructor-arg type="java.lang.String" value="Bimbo"/> -->
+<!-- 		<constructor-arg type="java.lang.Boolean" value="true"/> -->
+<!-- 		<constructor-arg type="java.lang.Integer" value="1"/>		 -->
+<!-- 	</bean>	 -->
+	
+<!-- 	<bean id="panPerro" class="com.pe.devcode.comida.Pan">  -->
+<!-- 		<constructor-arg index="0" value="pan de perro"/> -->
+<!-- 		<constructor-arg index="1" value="Bimbo"/> -->
+<!-- 		<constructor-arg index="2" value="true"/> -->
+<!-- 		<constructor-arg index="3" value="1"/>		 -->
+<!-- 	</bean>	 -->
+	
+	
+	<bean id="carne" class="com.pe.devcode.modelo.Carne"> 
+		<property name="tamano" value="120 lbs"/>
+	</bean>
+	
+	<bean id="salsa" class="com.pe.devcode.modelo.Salsa"> 
+		<property name="marca" value="Heinz"/>
+		<property name="tipo" value="tomate"/>
+	</bean>
+	
+	<bean id="salchichaAlemana" class="com.pe.devcode.modelo.Salchicha"> 
+		<property name="marca" value="ABC"/>
+		<property name="tipo" value="Alemana"/>
+	</bean>	
+	
+	<bean id="salchichaPolaca" class="com.pe.devcode.modelo.Salchicha"> 
+		<property name="marca" value="ABC"/>
+		<property name="tipo" value="Polaca"/>
+	</bean>		
+	
+	<bean id="quesoAmarillo" class="com.pe.devcode.modelo.Queso"> 
+		<property name="marca" value="Tradicional"/>
+		<property name="tipo" value="Amarillo"/>
+	</bean>		
+	
+	<bean id="jamonPavo" class="com.pe.devcode.modelo.Jamon"> 
+		<property name="marca" value="AB"/>
+		<property name="tipo" value="Pavo"/>
+	</bean>		
+	
+	<bean id="hamburguesa" class="com.pe.devcode.modelo.Hamburguesa" autowire="byName"> 
+		<property name="nombre" value="Big Mac"/>
+		<property name="precio" value="4"/>
+<!-- 		<property name="pan" ref="pan"/> -->
+<!-- 		<property name="carne" ref="carne"/> -->
+<!-- 		<property name="salsa" ref="salsa"/> -->
+	</bean>
+	
+	
+		
+</beans>
